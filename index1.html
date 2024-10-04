@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Música Favorita - Lista</title>
     <style>
+        :root {
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --card-bg: white;
+            --card-shadow: rgba(0,0,0,0.1);
+            --accent-color: #34495e;
+            --button-bg: #2c3e50;
+            --button-hover: #34495e;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --header-bg: #1c2833;
+                --card-bg: #2c3e50;
+                --card-shadow: rgba(0,0,0,0.3);
+                --accent-color: #3498db;
+                --button-bg: #3498db;
+                --button-hover: #2980b9;
+            }
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,12 +38,13 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
-            background-color: #2c3e50;
+            background-color: var(--header-bg);
             color: white;
             text-align: center;
             padding: 2rem 1rem;
@@ -41,24 +66,24 @@
         }
 
         .music-item {
-            background: white;
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
             cursor: pointer;
         }
 
         .music-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px var(--card-shadow);
         }
 
         .music-item h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: #2c3e50;
+            color: var(--accent-color);
         }
 
         details {
@@ -68,7 +93,7 @@
         summary {
             cursor: pointer;
             margin-bottom: 0.5rem;
-            color: #34495e;
+            color: var(--accent-color);
             font-weight: bold;
             outline: none;
         }
@@ -87,20 +112,20 @@
             transform: rotate(90deg);
         }
 
-        .music-button {
-            background-color: #2c3e50;
+        .music-button, .gallery-button {
+            background-color: var(--button-bg);
             color: white;
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
-            display: inline-block;
             text-decoration: none;
+            display: inline-block;
         }
 
-        .music-button:hover {
-            background-color: #34495e;
+        .music-button:hover, .gallery-button:hover {
+            background-color: var(--button-hover);
             transform: scale(1.05);
         }
 
@@ -109,46 +134,14 @@
             margin-top: 2rem;
         }
 
-        .gallery-button {
-            background-color: #e74c3c;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            font-size: 1.2rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .gallery-button:hover {
-            background-color: #c0392b;
-            transform: scale(1.05);
-        }
-
         footer {
-            background-color: #2c3e50;
+            background-color: var(--header-bg);
             color: white;
             text-align: center;
             padding: 1rem;
             margin-top: 2rem;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .music-item {
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
-        }
-
-        .music-item:nth-child(1) { animation-delay: 0.1s; }
-        .music-item:nth-child(2) { animation-delay: 0.2s; }
-        .music-item:nth-child(3) { animation-delay: 0.3s; }
-        .music-item:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
