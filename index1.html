@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música Favorita - Lista</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .music-list {
+            list-style: none;
+        }
+
+        .music-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .music-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .music-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        details {
+            margin-bottom: 1rem;
+        }
+
+        summary {
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: bold;
+            outline: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: '►';
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .music-button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .music-button:hover {
+            background-color: #34495e;
+            transform: scale(1.05);
+        }
+
+        .gallery-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .gallery-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .gallery-button:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .music-item {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .music-item:nth-child(1) { animation-delay: 0.1s; }
+        .music-item:nth-child(2) { animation-delay: 0.2s; }
+        .music-item:nth-child(3) { animation-delay: 0.3s; }
+        .music-item:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Música Favorita - Lista</h1>
+    </header>
+    <main>
+        <ul class="music-list">
+            <li class="music-item">
+                <h3>Kany Garcia - Aguita de Coco</h3>
+                <details>
+                    <summary>Sobre la canción</summary>
+                    <p>A ritmo de bomba puertorriqueña, "Agüita e Coco" es tan refrescante como su título, deleitándonos con la sobresaliente interpretación de Kany, al igual que su historia, que se trata de una persona que aun sin buscar una relación formal la terminó encontrando a través de los besos de una persona especial: "A ti te tomo como agüita 'e coco, poquito a poco nos volvemos locos".</p>
+                </details>
+                <a href="https://www.youtube.com/watch?v=chovfjVGrBI" class="music-button">Escucha ahora</a>
+            </li>
+            <li class="music-item">
+                <h3>Romeo Santos - Inmortal</h3>
+                <details>
+                    <summary>Sobre la canción</summary>
+                    <p>Inmortal es una canción grabada por Aventura lanzada como el sencillo principal del cuarto álbum de estudio de Romeo Santos, Utopía. Es el primer sencillo de la banda desde su separación en 2011.</p>
+                </details>
+                <a href="https://www.youtube.com/watch?v=XlmaJ-yU46U" class="music-button">Escucha ahora</a>
+            </li>
+            <li class="music-item">
+                <h3>ALI A.K.A Mind - Buen Viaje</h3>
+                <details>
+                    <summary>Sobre la canción</summary>
+                    <p>Buen Viaje es un homenaje por quien no está y cuya ausencia se convierte en un peso en el alma. La composición gira en torno a la muerte y da muestra de las reflexiones del artista.</p>
+                </details>
+                <a href="https://www.youtube.com/watch?v=XtNDZh4aYPE" class="music-button">Escucha ahora</a>
+            </li>
+            <li class="music-item">
+                <h3>Andres Cepeda - Piel Canela</h3>
+                <details>
+                    <summary>Sobre la canción</summary>
+                    <p>Descripción breve de la canción.</p>
+                </details>
+                <a href="https://www.youtube.com/watch?v=XD2zaWUAMHw" class="music-button">Escucha ahora</a>
+            </li>
+        </ul>
+        <div class="gallery-link">
+            <a href="index2.html" class="gallery-button">Galería</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lista de Música Favorita</p>
+    </footer>
+</body>
+</html>
